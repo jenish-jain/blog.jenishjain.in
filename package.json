@@ -11,6 +11,7 @@
     "prebuild": "postcss --config commonjs-compat src/styles/*.css -d public/styles/",
     "build": "toast incremental .",
     "serve": "serve public",
+    "clear-old" : "rm -rf node_modules/.cache/gh-pages",
     "deploy": "gh-pages -b production -d public"
   },
   "dependencies": {
