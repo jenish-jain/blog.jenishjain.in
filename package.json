@@ -1,15 +1,17 @@
 {
-  "name": "blogpost-starter",
+  "name": "blog.jenishjain.in",
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
   "author": "jenishjain",
   "license": "MIT",
+  "homepage": "http://blog.jenish-jain.in",
   "scripts": {
     "postinstall": "./postinstall.js",
     "prebuild": "postcss --config commonjs-compat src/styles/*.css -d public/styles/",
     "build": "toast incremental .",
-    "serve": "serve public"
+    "serve": "serve public",
+    "deploy": "gh-pages -b production -d build"
   },
   "dependencies": {
     "@toastdotdev/mdx": "^0.2.3",
