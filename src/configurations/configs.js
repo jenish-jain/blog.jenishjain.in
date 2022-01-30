@@ -1,5 +1,5 @@
 export const configs = {
-  blogName: "Blog site",
+  blogName: "Jenish Jain",
   websiteUrl: 'https://www.jenishjain.in/',
   twitterHandel: 'jenishjain6',
   cloudinaryConfigs: {

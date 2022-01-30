@@ -11,7 +11,7 @@ export function Header() {
 
   return (
     <header class='site-header'>
-      <a href='/' rel='home' class='home'>
+      <a href='https://jenishjain.in' rel='home' class='home'>
         {configs.blogName}
       </a>
       {/* <nav class='site-nav'>
