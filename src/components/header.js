@@ -1,21 +1,16 @@
-import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
-
+import { h } from '/web_modules/preact.js';
+import { useState, useEffect } from '/web_modules/preact/hooks.js';
+import { configs } from '../configurations/configs.js';
 export function Header() {
-  const [isHome, setIsHome] = useState(false);
-
-  useEffect(() => {
-    setIsHome(window.location.pathname === '/');
-  }, []);
-
-  return (
-    <header class='site-header'>
-      <a href='/' rel='home' class='home'>
-        Jenish's Blogs
-      </a>
-      {/* <nav class='site-nav'>
-        <a href='/posts'>Writing</a>
-      </nav> */}
-    </header>
-  );
+    const [isHome, setIsHome] = useState(false);
+    useEffect(()=>{
+        setIsHome(window.location.pathname === '/');
+    }, []);
+    return h("header", {
+        class: 'site-header'
+    }, h("a", {
+        href: '/',
+        rel: 'home',
+        class: 'home'
+    }, configs.blogName));
 }

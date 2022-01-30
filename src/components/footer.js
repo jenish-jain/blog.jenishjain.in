@@ -1,13 +1,12 @@
-import { h } from 'preact';
-
+import { h } from '/web_modules/preact.js';
 export function Footer() {
-  return (
-    <footer class="footer">
-      <span>powered by boops</span>
-      <nav class="footer-nav">
-        <a href="/posts">posts</a>
-        <a href="https://github.com/jlengstorf/jason.af">source code</a>
-      </nav>
-    </footer>
-  );
+    return h("footer", {
+        class: "footer"
+    }, h("span", null, "powered by thoughts"), h("nav", {
+        class: "footer-nav"
+    }, h("a", {
+        href: "/posts"
+    }, "posts"), h("a", {
+        href: "https://github.com/jenish-jain/blogpost-starter"
+    }, "source code")));
 }
