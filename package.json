@@ -17,7 +17,6 @@
     "@toastdotdev/mdx": "^0.2.3",
     "cssnano": "^5.0.15",
     "esinstall": "1.1.4",
-    "path": "^0.12.7",
     "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
     "rehype-identity-footnote-containers": "^1.0.0",
