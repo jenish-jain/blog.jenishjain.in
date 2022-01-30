@@ -11,7 +11,7 @@
     "prebuild": "postcss --config commonjs-compat src/styles/*.css -d public/styles/",
     "build": "toast incremental .",
     "serve": "serve public",
-    "deploy": "gh-pages -b production -d build"
+    "deploy": "gh-pages -b master -d public"
   },
   "dependencies": {
     "@toastdotdev/mdx": "^0.2.3",
