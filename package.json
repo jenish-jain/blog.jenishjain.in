@@ -15,6 +15,7 @@
     "deploy": "gh-pages -b production -d public"
   },
   "dependencies": {
+    "@blocks/kit": "^0.0.28",
     "@toastdotdev/mdx": "^0.2.3",
     "cssnano": "^5.0.15",
     "esinstall": "1.1.4",

@@ -1,0 +1,42 @@
+export const meta = {
+    date: '2022-05-03',
+    title: 'How to deploy your app in kubernetes',
+    seo_title: 'How to deploy your app in kubernetes',
+    slug: 'deploy-your-app-in-k8s',
+    description: 'Create a deployment of your app in kubernetes with minikube',
+    category: 'blog',
+    tags: ['docker', 'k8s', 'kubernetes', 'application', 'nodejs', 'minikube'],
+    image: 'https://avatars.dicebear.com/api/bottts/docker.svg',
+    cta: 'deployment',
+    site: 'blogsite',
+    thumb: 'https://avatars.dicebear.com/api/bottts/docker.svg'
+};
+
+Right after i developed my first application, next thing that i wanted to do was deploy it on cloud to share it with others.
+While there are many tools available like [netlify](https://www.netlify.com/), [heroku](https://www.heroku.com/home) etc to deploy your app easily without much setup, 
+i always want to know what it takes to deploy a app from start on a cloud service provider like GKE or AWS. 
+<br/>
+
+This blog will cover one of the steps which is to create a deployment of your app using kubernetes, 
+test it locally on minikube to be ready to deploy on a cloud service like GKE or AWS with minimal or no changes.
+
+## Prequisite
+* [kubernetes](https://kubernetes.io/releases/download/)
+* [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+* [minikube](https://minikube.sigs.k8s.io/docs/start/)
+* A docker image of your app you want to deploy
+
+assuming you have a react app your docker file would looks something like this
+<br/>
+![docker file](https://res.cloudinary.com/jenishjain/image/upload/v1651933832/portfolio/blog-assets/react_dockerfile.png)
+<br/>
+Note, that exposing the port is quite important since that’s where the application will run.
+<br/>
+Now that we have a docker file ready we would need to build this docker image
+and transfer it to docker hub, post which we can specify this image path in our
+kubernetes deployment files
+
+<Gist id='0586aab074c6fee255e8789e89a784f3'/>
+## Create a deployment for your app
+
+

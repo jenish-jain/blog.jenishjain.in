@@ -7,6 +7,8 @@ import { Block } from '../components/block.js';
 import { Form } from '../components/form.js';
 import { TableOfContents } from '../components/table-of-contents.js';
 import { configs } from '../configurations/configs.js';
+import { Gist } from '@blocks/kit'
+
 
 export function PostWrapper({ children, title, seo_title, description, image, slug }) {
   const ref = useRef();
