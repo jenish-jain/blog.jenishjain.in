@@ -3,11 +3,60 @@ export const meta = {
   title: 'How to manage multiple git users on a single system',
   seo_title: 'How to manage multiple git users on a single system',
   slug: 'manage-multiple-git-user-on-1-system',
-  description: 'How to contribute with multiple git accounts with a single system without switching your user always',
+  description: 'An easy way to contribute with multiple github profiles using a single system',
   category: 'productivity',
   tags: ['git', 'productivity', 'blog', 'website'],
-  image: 'https://avatars.dicebear.com/api/micah/blog.svg',
+  image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/12830a141409355.6255198842c0f.gif',
   cta: 'productivity',
   site: 'blogsite',
-  thumb: 'https://avatars.dicebear.com/api/micah/blog.svg',
+  thumb: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/52a130141409355.62566a5b6114b.jpg',
 };
+
+Having problems managing your multiple personalities?
+well this can be resolved for git :p using these simple steps.
+
+## Problem
+
+Most of us have atleast two github profiles one for work and another personal and contributing to both of them with sepereate accounts could be a pain. while one can always remember and switch the profiles, but we can do a better job here using some configurations :)
+
+## Solution
+
+Assuming you have a usual setup of a workspace and a personalspace which you use to organise your work and personal projects and the structure looks something like this.
+
+
+  ![folder structure](https://res.cloudinary.com/jenishjain/image/upload/v1662190325/portfolio/blog-assets/folder-structure.png)
+
+
+> We can take advantage of gitconfigs here to instruct git to use a particular set on credentials in a given case.
+
+
+We have a ```.gitconfig``` file at the root level which maintains your global git config. what we are gonna do is store individual git config in your pesonal and work folders and tell .gitconfig to replace the user and credentials according to my space i am working in.
+
+### create space specific config files
+
+we will have to create .config files in each folder something like this
+
+
+![git-config](https://res.cloudinary.com/jenishjain/image/upload/v1662191687/portfolio/blog-assets/git-config.png)
+
+
+after creating both the config files your folders should looks like this
+
+![folders-with-gitconfig](https://res.cloudinary.com/jenishjain/image/upload/v1662192358/portfolio/blog-assets/folder-with-gitconf.png)
+
+### configuring your global git config
+now in your global ```~/.gitconfig``` file we need to replace the [user] block with the one shown below ( for me both workspace and personal space were present on desktop)
+
+![global git config](https://res.cloudinary.com/jenishjain/image/upload/v1662192762/portfolio/blog-assets/global-git-config.png)
+
+## Thats All 🎉 
+
+now you can simply navigate to your desired space and work without worrying about commiting with correct git profile.
+
+## Test if this is working 👀
+
+we can test this by simply creating a test project and initialising git in it. on checking the local config you should see the appropirate username and email configured.
+
+![personalspace-test](https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/personalpace-test.png)
+
+![workspace-test](https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/workspace-test.png)
