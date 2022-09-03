@@ -24,16 +24,16 @@ const MDXLayout = "wrapper";
 function MDXContent({ components , ...props }) {
     return mdx(MDXLayout, Object.assign({
         components: components
-    }, props), mdx("p", null, "I always wanted to start my personal blogging website where I can share my ideas easily. Also it is not that I am a regular blogger and want to earn from the same.\nBut wanted a personal space where I can share my thoughts and learning processes easily with others over internet.\nI have tried other blogging platforms like medium and wordpress thought they are very good and easy to use i always wanted to have something of my own which I can host on my personal web address :)."), mdx("h2", {
-        id: "things-i-expect-from-my-blogging-site"
+    }, props), mdx("p", null, "After starting my journey as a developer I always wanted to have a personal bloging site where I can share my ideas and projects with the world.\nAlso I wanted an easy to write blog setup that does not takes up half of my time setting up and styling my blog.\nAfter having tried other blogging platforms like medium and wordpress I was quite sure of how I wanted my blog site to look and feel like."), mdx("h2", {
+        id: "things-i-expected-from-my-blogging-site"
     }, mdx("a", {
         className: "heading-link-anchor",
-        href: "#things-i-expect-from-my-blogging-site",
+        href: "#things-i-expected-from-my-blogging-site",
         parentName: "h2"
     }, mdx("heading-link-icon", {
         className: "heading-link-icon",
         parentName: "a"
-    })), "Things I expect from my blogging site"), mdx("ol", null, mdx("li", {
+    })), "Things I expected from my blogging site"), mdx("ol", null, mdx("li", {
         parentName: "ol"
     }, "Writing blog should be as simple as wiriting a text document, did not wanted to spend time on formatting and styling it."), mdx("li", {
         parentName: "ol"
@@ -53,14 +53,26 @@ function MDXContent({ components , ...props }) {
         parentName: "a"
     })), "What does this blogging starter provide"), mdx("ul", null, mdx("li", {
         parentName: "ul"
-    }, "An markdown based blog writing prestyled site. which can be used as it is or can be curated as per ones need by changing few CSS or components in the post-wrapper component."), mdx("li", {
+    }, "An markdown based prestyled blog writing site which can be used as it is or can be curated as per ones need by changing few CSS or components in the post-wrapper component."), mdx("li", {
         parentName: "ul"
-    }, "Since it is MD based all the fomatting supported with a .md file are supported."), mdx("li", {
+    }, "Since it is MD based you can do anything supported in the markdown syntax."), mdx("li", {
         parentName: "ul"
     }, "This specifically uses ", mdx("a", {
         href: "https://mdxjs.com/",
         parentName: "li"
-    }, "MDX"), " which allows you to use JSX in your markdown content.[^JSX] This makes writing long-form content with components a blast. 🚀")), mdx("p", null, "[^JSX]:\nYou can import components, such as interactive charts or alerts, and embed them within your content."));
+    }, "MDX"), " which allows you to use JSX in your markdown content.You can import components, such as interactive charts or alerts,\nand embed them within your content. This makes writing long-form content with components a blast. 🚀")), mdx("h3", {
+        id: "how-does-this-blog-look-in-its-raw-format"
+    }, mdx("a", {
+        className: "heading-link-anchor",
+        href: "#how-does-this-blog-look-in-its-raw-format",
+        parentName: "h3"
+    }, mdx("heading-link-icon", {
+        className: "heading-link-icon",
+        parentName: "a"
+    })), "How does this blog look in its raw format?"), mdx("p", null, mdx("a", {
+        href: "https://github.com/jenish-jain/blog.jenishjain.in/blob/master/content/posts/1-start-your-blog-site-in-10-mins/start-your-blog-site-in-10-mins.mdx",
+        parentName: "p"
+    }, "https://github.com/jenish-jain/blog.jenishjain.in/blob/master/content/posts/1-start-your-blog-site-in-10-mins/start-your-blog-site-in-10-mins.mdx")));
 }
 MDXContent.isMDXComponent = true;
 export default MDXContent;

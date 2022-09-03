@@ -9,7 +9,7 @@ export function Header() {
     return h("header", {
         class: 'site-header'
     }, h("a", {
-        href: '/',
+        href: 'https://jenishjain.in',
         rel: 'home',
         class: 'home'
     }, configs.blogName));
