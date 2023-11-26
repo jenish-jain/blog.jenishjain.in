@@ -4,13 +4,13 @@ const terser = require('terser');
 const postcss = require('postcss');
 const csso = require('csso');
 const autoprefixer = require('autoprefixer');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const cloudinary = require('@jlengstorf/cloudinary-11ty-helpers')({
   cloud_name: 'jenishjain',
   folder: 'portfolio',
-  image_width: 680,
-  api_key: "864381823919571",
-  api_secret: "QAJ1UypDaqdP1fiKoJuhrej5uuU"
+  image_width: 680
 });
 
 module.exports = function (eleventyConfig) {
