@@ -1,34 +1,31 @@
 {
   "name": "blog.jenishjain.in",
+  "private": true,
+  "description": "Jenish's personal blogsite",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "author": "jenishjain",
   "license": "MIT",
   "homepage": "http://blog.jenish-jain.in",
   "scripts": {
-    "postinstall": "./postinstall.js",
-    "prebuild": "postcss --config commonjs-compat src/styles/*.css -d public/styles/",
-    "build": "toast incremental .",
-    "serve": "serve public",
-    "clear-old": "rm -rf node_modules/.cache/gh-pages",
-    "deploy": "gh-pages -b production -d public"
+    "build": "eleventy",
+    "dev": "eleventy --serve"
   },
   "dependencies": {
-    "@toastdotdev/mdx": "^0.2.3",
-    "cssnano": "^5.0.15",
-    "esinstall": "1.1.4",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@jlengstorf/cloudinary-11ty-helpers": "^0.1.4",
+    "@jlengstorf/get-share-image": "^0.8.0",
+    "autoprefixer": "^10.4.2",
+    "csso": "^5.0.2",
+    "eleventy-plugin-toc": "^1.1.5",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.4.1",
     "postcss": "^8.2.9",
-    "postcss-cli": "^8.3.1",
-    "rehype-identity-footnote-containers": "^1.0.0",
-    "remark-numbered-footnotes": "^2.0.0",
-    "toast": "^0.3.43"
+    "terser": "^5.10.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "netlify-plugin-toast-cache": "^0.0.4",
-    "pretty-bytes": "5.6.0",
-    "serve": "^13.0.2"
+    "autoprefixer": "^10.2.5"
   },
   "snowpack": {
     "exclude": [
