@@ -3,7 +3,6 @@
   "private": true,
   "description": "Jenish's personal blogsite",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "jenishjain",
   "license": "MIT",
   "homepage": "http://blog.jenish-jain.in",
