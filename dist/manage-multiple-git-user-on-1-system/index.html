@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="preload"
+      href="/fonts/jwf-book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jwf-bookitalic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jwf-ultra.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff87d4" />
+    <meta name="msapplication-TileColor" content="#ffe742" />
+    <meta name="theme-color" content="#ffe742" />
+
+    
+<title>How to manage multiple git users on a single system</title>
+
+<link rel="canonical" href="/manage-multiple-git-user-on-1-system/" />
+<meta name="description" content="An easy way to contribute with multiple github profiles using a single system" />
+
+<meta name="image" content="https://res.cloudinary.com/jenishjain/image/upload/f_auto,q_auto,w_420/v1700994703/portfolio/multiple-git-profiles.jpg" />
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/manage-multiple-git-user-on-1-system/" />
+<meta property="og:description" content="An easy way to contribute with multiple github profiles using a single system" />
+
+<meta property="og:image" content="https://res.cloudinary.com/jenishjain/image/upload/f_auto,q_auto,w_420/v1700994703/portfolio/multiple-git-profiles.jpg" />
+
+
+<meta name="twitter:dnt" content="on" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@jenishjain6" />
+<meta name="twitter:title" content="How to manage multiple git users on a single system" />
+<meta name="twitter:description" content="An easy way to contribute with multiple github profiles using a single system" />
+
+<meta name="twitter:image" content="https://res.cloudinary.com/jenishjain/image/upload/f_auto,q_auto,w_420/v1700994703/portfolio/multiple-git-profiles.jpg" />
+
+
+
+    <link rel="alternate" type="application/rss+xml" 
+          title="RSS Feed for jenishjain.in" 
+          href="/feed.xml" />
+
+    <link href="https://twitter.com/jenishjain6" rel="me" />
+    <link href="https://github.com/jenish-jain" rel="me" />
+  </head>
+
+  <body class="">
+    
+    <header>
+      <a href="/" rel="home" class="home-link">Jenish Jain</a>
+
+      <nav class="main-nav ">
+      
+      </nav>
+
+      
+
+    </header>
+    
+
+    
+    <main>
+      <article class="post">
+        
+        
+        <div class="heading">
+          <h1>How to manage multiple git users on a single system</h1>
+          <p class="lede">An easy way to contribute with multiple github profiles using a single system</p>
+        </div>
+        
+        
+
+        
+<div class="details">
+  <figure class="author">
+    <img
+      src="https://res.cloudinary.com/jenishjain/image/upload/q_auto,f_auto,c_thumb,w_260,h_260,g_faces,z_0.55/v1700920184/portfolio/images/jenishjain-with-chopsticks.jpg"
+      alt="Jenish Jain" />
+    <figcaption>written by Jenish</figcaption>
+  </figure>
+</div>
+
+
+        
+<div class="sidebar">
+  <div class="sticky-sidebar">
+    <div class="newsletter-nudge">
+      <p>
+        Hey, friends! I share posts like these regularly in my
+        newsletter.
+        <strong
+          >Sign up to get my best stuff direct to your inbox.</strong
+        >
+      </p>
+      <a href="/newsletter/" class="button">I love stuff!</a>
+    </div>
+
+    <details class="table-of-contents" open>
+      <summary>Table of Contents</summary>
+
+      <div class="toc" >
+        <ol><li><a href="#problem">Problem</a></li><li><a href="#solution">Solution</a></li><li><a href="#thats-all">Thats All 🎉</a></li><li><a href="#test-if-this-is-working">Test if this is working 👀</a></li><li><a href="#references">References</a></li></ol>
+      </div>
+    </details>
+  </div>
+</div>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+  data-id="jenishjain" data-description="Support me on Buy me a pizza!" data-message="Buy me a pizza!"
+  data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+        
+        <div class="content">
+          <p>Having problems managing your multiple personalities? <br />
+well this can be resolved for git using these simple steps.🪄</p>
+<h2 id="problem" tabindex="-1">Problem</h2>
+<p>Most of us have atleast two github profiles one for work and another personal and contributing to both of them with separate accounts could be a pain. while one can always remember and switch their profiles, but we can do a better job here using some configurations.</p>
+<h2 id="solution" tabindex="-1">Solution</h2>
+<p>Assuming you have a usual setup of a workspace and a personalspace which you use to organise your work and personal projects and the structure looks something like this.</p>
+<br />
+<p><img src="https://res.cloudinary.com/jenishjain/image/upload/v1662190325/portfolio/blog-assets/folder-structure.png" alt="folder structure" srcset="https://res.cloudinary.com/jenishjain/image/upload/v1662190325/portfolio/blog-assets/folder-structure.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662190325/portfolio/blog-assets/folder-structure.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662190325/portfolio/blog-assets/folder-structure.png 680w,https://res.cloudinary.com/jenishjain/image/upload/v1662190325/portfolio/blog-assets/folder-structure.png 300w" loading="lazy" sizes="(max-width: 680px) 100vw, 680px"></p>
+<br />
+We can take advantage of gitconfigs here to instruct git to use a particular set of credentials in a given space.
+<br />
+<p>We have a <em>.gitconfig</em> file at the root level which maintains your global git configuration. what we are gonna do is store individual git config in your pesonal and work folders and tell <em>.gitconfig</em> to replace the user and credentials according to the space you are in.</p>
+<h3 id="create-space-specific-config-files" tabindex="-1">create space specific config files</h3>
+<p>we will have to create <em>.config</em> files in each folder something like this.
+<br /></p>
+<p><img src="https://res.cloudinary.com/jenishjain/image/upload/v1662191687/portfolio/blog-assets/git-config.png" alt="git-config" srcset="https://res.cloudinary.com/jenishjain/image/upload/v1662191687/portfolio/blog-assets/git-config.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662191687/portfolio/blog-assets/git-config.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662191687/portfolio/blog-assets/git-config.png 680w,https://res.cloudinary.com/jenishjain/image/upload/v1662191687/portfolio/blog-assets/git-config.png 300w" loading="lazy" sizes="(max-width: 680px) 100vw, 680px"></p>
+<br />
+after creating both the config files your folders should looks like this.
+<br />
+<p><img src="https://res.cloudinary.com/jenishjain/image/upload/v1662192358/portfolio/blog-assets/folder-with-gitconf.png" alt="folders-with-gitconfig" srcset="https://res.cloudinary.com/jenishjain/image/upload/v1662192358/portfolio/blog-assets/folder-with-gitconf.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662192358/portfolio/blog-assets/folder-with-gitconf.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662192358/portfolio/blog-assets/folder-with-gitconf.png 680w,https://res.cloudinary.com/jenishjain/image/upload/v1662192358/portfolio/blog-assets/folder-with-gitconf.png 300w" loading="lazy" sizes="(max-width: 680px) 100vw, 680px"></p>
+<h3 id="configuring-your-global-git-config" tabindex="-1">configuring your global git config</h3>
+<p>now in your global <code>~/.gitconfig</code> file we need to replace the [user] block with the one shown below ( for me both workspace and personal space were present on desktop)
+<br /></p>
+<p><img src="https://res.cloudinary.com/jenishjain/image/upload/v1662192762/portfolio/blog-assets/global-git-config.png" alt="global git config" srcset="https://res.cloudinary.com/jenishjain/image/upload/v1662192762/portfolio/blog-assets/global-git-config.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662192762/portfolio/blog-assets/global-git-config.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662192762/portfolio/blog-assets/global-git-config.png 680w,https://res.cloudinary.com/jenishjain/image/upload/v1662192762/portfolio/blog-assets/global-git-config.png 300w" loading="lazy" sizes="(max-width: 680px) 100vw, 680px"></p>
+<h2 id="thats-all" tabindex="-1">Thats All 🎉</h2>
+<p>now you can simply navigate to your desired space and work without worrying about commiting with correct git profile.</p>
+<h2 id="test-if-this-is-working" tabindex="-1">Test if this is working 👀</h2>
+<p>we can test this by simply creating a test project and initialising git in it. on checking the local config you should see the appropirate username and email configured.
+<br /></p>
+<p><img src="https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/personalpace-test.png" alt="personalspace-test" srcset="https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/personalpace-test.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/personalpace-test.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/personalpace-test.png 680w,https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/personalpace-test.png 300w" loading="lazy" sizes="(max-width: 680px) 100vw, 680px"></p>
+<p><img src="https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/workspace-test.png" alt="workspace-test" srcset="https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/workspace-test.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/workspace-test.png 2040w,https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/workspace-test.png 680w,https://res.cloudinary.com/jenishjain/image/upload/v1662193809/portfolio/blog-assets/workspace-test.png 300w" loading="lazy" sizes="(max-width: 680px) 100vw, 680px"></p>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9">https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9</a></li>
+</ul>
+<div class="opt-in">
+  <div class="opt-in-image">
+    <img loading="lazy" src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,c_fill,w_280,h_296/jason.energy/opt-in.jpg" alt="Illustration of a letter with a heart on the top flap." />
+  </div>
+  <form action="/api/subscribe" method="POST">
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="firstName" type="text" />
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" />
+    <button 
+      type="submit"
+      data-sound-hover="pop"
+      data-sound-focus="pop"
+      data-sound-click="hooray"
+    >
+      Subscribe
+    </button>
+    <p class="notice"><small>I will never share your personal information because I'm not a jerk.</small></p>
+  </form>
+</div>
+
+        </div>
+        
+      </article>
+    </main>
+    
+
+    <footer>
+      <span class="boops">powered by thoughts</span>
+      <nav class="footer-nav">
+      
+        <a href="https://github.com/jenish-jain/blog.jenishjain.in">source code</a>
+      </nav>
+    </footer>
+
+    
+<script src="/scripts/post.min.js"></script>
+
+  </body>
+</html>
