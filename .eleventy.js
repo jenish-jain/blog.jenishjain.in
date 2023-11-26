@@ -168,22 +168,7 @@ module.exports = function (eleventyConfig) {
 </figure>
 `;
     },
-  );
-
-  eleventyConfig.addShortcode('uses', (item) => {
-    return `
-<div class="uses-item">
-  <h3>${item.name}</h3>
-  <ul>${item.tags.map((tag) => `<li>${tag}</li>`).join(' ')}</ul>
-  <p>${item.details}</p>
-
-  <a href="${item.link}" class="uses-item-link ${item.sponsored ? 'sponsored' : ''
-      }">
-    More <span class="sr-only">${item.name}</span> details &rarr;
-  </a>
-</div>
-`;
-  });
+  ); 
 
   return {
     dir: {
