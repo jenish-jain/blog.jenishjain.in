@@ -2,4 +2,5 @@ node_modules
 .tmp
 public
 .env
-
+dist
+.cache
