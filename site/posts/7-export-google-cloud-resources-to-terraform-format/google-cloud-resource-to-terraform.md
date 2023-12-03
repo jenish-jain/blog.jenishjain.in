@@ -6,7 +6,7 @@ title: >
 seo_title: export google cloud resources to terraform format
 slug: google-cloud-resource-to-terraform
 description: >
-    Steps to export your google cloud resources crated using click OPs to terraform code for IAC
+    How to export your google cloud resources created using click OPs to terraform code for IAC
 category: productivity
 tags: [google-cloud, iac, terraform]
 cta: gcp-to-terraform
@@ -14,7 +14,7 @@ site: blogsite
 thumb: 'https://res.cloudinary.com/jenishjain/image/upload/v1701601252/portfolio/blog-assets/iac.jpg'
 ---
 
-Usually while we are still figuring out stuffs , we tend to create our actual step in google cloud using ClickOps and now that is our production environment which we want to move to IAC later.
+Typically, during the initial stages of development, we often establish our operational infrastructure on Google Cloud through ClickOps. This setup currently serves as our production environment, but our goal is to transition it to Infrastructure as Code (IAC) in the future.
 
 ## So how can one migrate from ClickOps to IAC for google cloud
 
@@ -58,7 +58,7 @@ To get list of resources that can be exported using bulk-export command run [lis
 > gcloud beta resource-config list-resource-types
 ```
 
-Also if your setup is too large and taking time , you can selectively import only the required ones using [--resource-types=](https://cloud.google.com/docs/terraform/resource-management/export#export_a_single_resource_type)
+Now using the list you can selectively import only the required ones using [--resource-types=](https://cloud.google.com/docs/terraform/resource-management/export#export_a_single_resource_type) flag
 
 ## Resources
 
