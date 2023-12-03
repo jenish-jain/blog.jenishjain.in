@@ -68,5 +68,3 @@ we can test this by simply creating a test project and initialising git in it. o
 ## References
 
 * [https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9](https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9)
-
-{% include "shortcodes/newsletter-form.njk" %}
