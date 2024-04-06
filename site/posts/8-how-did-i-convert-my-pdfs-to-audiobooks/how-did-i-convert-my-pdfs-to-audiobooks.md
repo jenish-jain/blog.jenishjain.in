@@ -2,11 +2,11 @@
 
 date: 2024-04-06
 title: >
-    How did i convert my PDFs to audiobooks>
+    How did i convert my PDFs to audiobooks
 seo_title: how to convert your pdfs to audiobooks
 slug: how-did-i-convert-my-pdfs-to-audiobooks
 description: >
-    Tired of limited audiobook options? Turn YOUR PDFs into audiobooks for FREE (almost)! This fun guide shows you how to build your own audiobook factory using Google Cloud. We'll crack open PDFs, sort the content, and narrate it with text-to-speech. Get ready to transform any document into a personalized listening experience!
+    Tired of limited audiobook options? Turn YOUR PDFs into audiobooks for FREE (almost)! This fun guide shows you how to build your own audiobook factory using Google Cloud. We'll crack open PDFs, sort the content, and narrate it with text-to-speech!
 category: diy
 tags: [google-cloud, diy, audiobooks, cloud-functions, texttospeech, google vision api]
 cta: convert-pdfs-to-audiobooks
