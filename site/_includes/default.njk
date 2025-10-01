@@ -194,6 +194,20 @@
     </footer>
 
     {% block scripts %}
+    <script>
+      (function () {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          if (params.get('subscribed') === '1') {
+            alert('Thanks for subscribing!');
+            params.delete('subscribed');
+            var newQuery = params.toString();
+            var newUrl = window.location.pathname + (newQuery ? ('?' + newQuery) : '') + window.location.hash;
+            window.history.replaceState({}, '', newUrl);
+          }
+        } catch (e) {}
+      })();
+    </script>
     {% endblock %}
   </body>
 </html>
