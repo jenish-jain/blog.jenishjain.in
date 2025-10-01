@@ -16,7 +16,6 @@ function parseBody(event) {
       return {};
     }
   }
-  // default: x-www-form-urlencoded
   return querystring.parse(raw);
 }
 
@@ -27,7 +26,6 @@ exports.handler = async (event) => {
 
   const { firstName, email, message } = parseBody(event);
 
-  // Configure SMTP via environment variables on Netlify
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -41,24 +39,25 @@ exports.handler = async (event) => {
   const mailOptions = {
     from: email,
     to: toAddress,
-    subject: `New message from ${firstName || 'Anonymous'} via Feedback Form`,
-    text: `Name: ${firstName}\nEmail: ${email}\n\nMessage:\n${message}`,
+    subject: `New feedback from ${firstName || 'Anonymous'}`,
+    text: `Name: ${firstName}\nEmail: ${email}\n\nFeedback:\n${message}`,
   };
 
   try {
     await transporter.sendMail(mailOptions);
 
-    const origin = (event.headers && (event.headers.origin || event.headers.Origin || event.headers.referer || event.headers.Referer)) || '';
-    const siteOrigin = String(origin).replace(/\/$/, '');
-    const location = siteOrigin ? `${siteOrigin}/posts/?subscribed=1` : '/posts/?subscribed=1';
+    const referer = (event.headers && (event.headers.referer || event.headers.Referer)) || '';
+    if (referer) {
+      try {
+        const url = new URL(referer);
+        url.searchParams.set('feedback', '1');
+        return { statusCode: 303, headers: { Location: url.toString() }, body: '' };
+      } catch (_) {}
+    }
 
-    return {
-      statusCode: 303,
-      headers: { Location: location },
-      body: '',
-    };
+    return { statusCode: 303, headers: { Location: '/posts/?feedback=1' }, body: '' };
   } catch (error) {
-    return { statusCode: 500, body: 'Error sending email.' };
+    return { statusCode: 500, body: 'Error sending feedback.' };
   }
 };
 

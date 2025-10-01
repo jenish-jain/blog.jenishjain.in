@@ -47,16 +47,7 @@
 {% block sidebar %}
 <div class="sidebar">
   <div class="sticky-sidebar">
-    <div class="newsletter-nudge">
-      <p>
-        Hey, friends! I share posts like these regularly in my
-        newsletter.
-        <strong
-          >Sign up to get my best stuff direct to your inbox.</strong
-        >
-      </p>
-      <a href="/newsletter/" class="button">I love stuff!</a>
-    </div>
+    {% include "shortcodes/feedback-form.njk" %}
 
     <details class="table-of-contents" open>
       <summary>Table of Contents</summary>

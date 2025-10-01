@@ -205,6 +205,13 @@
             var newUrl = window.location.pathname + (newQuery ? ('?' + newQuery) : '') + window.location.hash;
             window.history.replaceState({}, '', newUrl);
           }
+          if (params.get('feedback') === '1') {
+            alert('Thanks for your feedback!');
+            params.delete('subscribed');
+            var newQuery = params.toString();
+            var newUrl = window.location.pathname + (newQuery ? ('?' + newQuery) : '') + window.location.hash;
+            window.history.replaceState({}, '', newUrl);
+          }
         } catch (e) {}
       })();
     </script>

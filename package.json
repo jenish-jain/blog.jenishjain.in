@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "jenishjain",
   "license": "MIT",
-  "homepage": "http://blog.jenish-jain.in",
+  "homepage": "http://blog.jenishjain.in",
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve"
