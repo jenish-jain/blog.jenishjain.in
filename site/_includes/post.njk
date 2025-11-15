@@ -194,7 +194,7 @@
             color: var(--color-text-heading);
             padding: 0;
           ">
-            <a href="{% if post.data.url %}{{ post.data.url }}{% else %}/{{ post.data.slug }}/{% endif %}" style="
+            <a href="{% if post.data.url %}{{ post.data.url }}{% else %}/{{ post.data.slug }}/{% endif %}"{% if post.data.url %} target="_blank" rel="noopener noreferrer"{% endif %} style="
               text-decoration: none;
               color: inherit;
             " onmouseover="this.style.color='var(--color-link)';" onmouseout="this.style.color='var(--color-text-heading)';">
