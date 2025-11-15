@@ -101,6 +101,8 @@ eleventyComputed:
           border-radius: 1rem;
           text-decoration: none;
           color: {% if tag == tagName %}var(--color-gray-900){% else %}var(--color-text-muted){% endif %};
+          position: relative;
+          z-index: 2;
         ">#{{ tag }}</a>
         {% endfor %}
       </div>
