@@ -28,6 +28,22 @@ eleventyExcludeFromCollections: true
     <priority>0.7</priority>
   </url>
 
+  {# Categories page #}
+  <url>
+    <loc>{{ siteUrl }}/categories/</loc>
+    <lastmod>{{ page.date | rssDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  {# Tags page #}
+  <url>
+    <loc>{{ siteUrl }}/tags/</loc>
+    <lastmod>{{ page.date | rssDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   {# All blog posts #}
   {%- for post in collections.posts %}
   <url>
@@ -35,6 +51,26 @@ eleventyExcludeFromCollections: true
     <lastmod>{{ post.date | rssDate }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  {%- endfor %}
+
+  {# Category pages #}
+  {%- for category in categoryList %}
+  <url>
+    <loc>{{ siteUrl }}/category/{{ category.slug }}/</loc>
+    <lastmod>{{ page.date | rssDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {%- endfor %}
+
+  {# Tag pages #}
+  {%- for tag in tagList %}
+  <url>
+    <loc>{{ siteUrl }}/tag/{{ tag.slug }}/</loc>
+    <lastmod>{{ page.date | rssDate }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   {%- endfor %}
 </urlset>

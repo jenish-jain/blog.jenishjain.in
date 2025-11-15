@@ -44,6 +44,32 @@
 
 {% block main %}
 <main>
+  <nav aria-label="Breadcrumb" class="breadcrumb" style="
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  ">
+    <ol style="
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    ">
+      <li style="margin: 0;">
+        <a href="/" style="color: var(--color-link); text-decoration: none;">Home</a>
+      </li>
+      <li aria-hidden="true" style="margin: 0;">&rsaquo;</li>
+      <li style="margin: 0;">
+        <a href="/posts/" style="color: var(--color-link); text-decoration: none;">Posts</a>
+      </li>
+      <li aria-hidden="true" style="margin: 0;">&rsaquo;</li>
+      <li aria-current="page" style="margin: 0; color: var(--color-text-emphasized);">{{ title }}</li>
+    </ol>
+  </nav>
+
   <article class="post">
     {% block heading %}
     <div class="heading">
@@ -60,6 +86,22 @@
           alt="Jenish Jain" />
         <figcaption>written by Jenish</figcaption>
       </figure>
+      <div class="post-meta">
+        <time datetime="{{ date | rssDate }}" style="
+          display: block;
+          font-size: 0.75rem;
+          color: var(--color-text-muted);
+          margin-top: 0.75rem;
+          text-align: center;
+        ">{{ date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}</time>
+        <span style="
+          display: block;
+          font-size: 0.75rem;
+          color: var(--color-text-muted);
+          margin-top: 0.5rem;
+          text-align: center;
+        ">{{ content | readingTime }}</span>
+      </div>
     </div>
     {% endblock %}
 
