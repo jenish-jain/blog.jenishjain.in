@@ -46,7 +46,7 @@
 <main>
   <nav aria-label="Breadcrumb" class="breadcrumb" style="
     grid-column: 1 / -1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 0.75rem;
     color: var(--color-text-muted);
   ">
@@ -72,7 +72,7 @@
 
   <article class="post">
     {% block heading %}
-    <div class="heading">
+    <div class="heading" style="margin-top: 0;">
       <h1>{{title}}</h1>
       <p class="lede">{{description}}</p>
     </div>
@@ -85,7 +85,8 @@
           src="https://res.cloudinary.com/jenishjain/image/upload/q_auto,f_auto,c_thumb,w_260,h_260,g_faces,z_0.55/v1700920184/portfolio/images/jenishjain-with-chopsticks.jpg"
           alt="Jenish Jain"
           width="260"
-          height="260" />
+          height="260"
+          style="object-fit: cover; aspect-ratio: 1 / 1;" />
         <figcaption>written by Jenish</figcaption>
       </figure>
       <div class="post-meta">
