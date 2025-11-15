@@ -1,17 +1,25 @@
+---
+title: Jenish Jain's Engineering Blog
+seo_title: Jenish Jain | Engineering Blog | Software Engineer at Rapido
+description: Engineering insights, system design tutorials, and tech experiences by Jenish Jain. Learn about software engineering, Rapido engineering culture, Apache Kafka, and more.
+---
 {% extends "default.njk" %}
 
 {% block seo %}
-<title>I am fixing the link here , bear with me till now and click on post above</title>
+<title>{{ seo_title }}</title>
 
-<link rel="canonical" href="{{ siteUrl }}/{{slug}}/" />
-<meta name="description" content="{{description}}" />
+<link rel="canonical" href="{{ siteUrl }}/" />
+<meta name="description" content="{{ description }}" />
+<meta name="keywords" content="Jenish Jain, Engineering, Software Engineer, Rapido, Engineering at Rapido, System Design, Apache Kafka, Tech Blog, Engineering Blog" />
+<meta name="author" content="Jenish Jain" />
 {% endblock %}
 
 {% block heading %}
 
 <div class="heading post-list">
-  <h1>I am fixing the redirection here , bear with me till then and click on posts above</h1>
-  <p class="lede">{{description}}</p>
+  <h1>Welcome to My Engineering Blog</h1>
+  <p class="lede">{{ description }}</p>
+  <p class="lede">Explore my latest posts on software engineering, system design, technology insights and beyond.</p>
 </div>
 
 {% endblock %}
