@@ -20,3 +20,20 @@ description: >
   </div>
   {% endfor %}
 </div>
+
+<div style="text-align: center; margin-top: 3rem;">
+  <a href="/tags/" style="
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-background);
+    border: 2px solid var(--color-primary);
+    border-radius: 0.25rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  " onmouseover="this.style.background='var(--color-primary)'; this.style.color='var(--color-background)';" onmouseout="this.style.background='var(--color-background)'; this.style.color='var(--color-primary)';">
+    Navigate by tags?
+  </a>
+</div>
