@@ -1031,7 +1031,7 @@ main.home {
 }
 
 .heading {
-  align-self: flex-end;
+  align-self: flex-start;
   grid-column: 2;
   grid-row-end: 2;
   text-align: center;
@@ -1065,7 +1065,7 @@ main.home {
 }
 
 .details {
-  align-self: flex-end;
+  align-self: flex-start;
   grid-column: 1;
   grid-row: 1;
   grid-row-end: 2;
@@ -1088,6 +1088,10 @@ main.home {
   display: block;
   margin: 0 auto;
   max-width: 130px;
+  max-height: 130px;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
 }
 
 .details figcaption {
