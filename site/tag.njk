@@ -85,7 +85,11 @@ eleventyComputed:
       {% if post.data.thumb %}
       <img src="{{ post.data.thumb }}" alt="{{ post.data.title }}" class="post-preview" loading="lazy" width="250" height="125" />
       {% endif %}
+      {% if post.data.url %}
+      <h2><a href="{{ post.data.url }}">{{ post.data.title }}</a></h2>
+      {% else %}
       <h2><a href="/{{ post.data.slug }}/">{{ post.data.title }}</a></h2>
+      {% endif %}
       <p class="description">{{ post.data.description }}</p>
       <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
         {% for tag in post.data.tags %}
