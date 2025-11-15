@@ -1217,7 +1217,7 @@ main.home {
   color: inherit;
 }
 
-.post-preview a::after {
+.post-preview h2 a::after {
   content: '';
   display: block;
   height: 100%;
@@ -1634,4 +1634,16 @@ footer nav {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* Related posts card clickable area */
+.related-post-card h3 a::after {
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
