@@ -1,0 +1,112 @@
+---
+pagination:
+  data: categoryList
+  size: 1
+  alias: categoryData
+permalink: "/category/{{ categoryData.slug }}/"
+eleventyComputed:
+  title: "{{ categoryData.name | capitalize }} Posts"
+  categoryName: "{{ categoryData.name }}"
+  categorySlug: "{{ categoryData.slug }}"
+---
+
+{% extends "default.njk" %}
+
+{% block seo %}
+<title>{{ categoryName | capitalize }} | Jenish Jain's Engineering Blog</title>
+<link rel="canonical" href="{{ siteUrl }}/category/{{ categorySlug }}/" />
+<meta name="description" content="Browse {{ categoryName }} posts on Jenish Jain's engineering blog. Insights on software engineering, tech, and professional growth." />
+<meta name="keywords" content="{{ categoryName }}, engineering, tech blog, Jenish Jain, software engineering" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ siteUrl }}/category/{{ categorySlug }}/" />
+<meta property="og:title" content="{{ categoryName | capitalize }} Posts | Jenish Jain" />
+<meta property="og:description" content="Browse {{ categoryName }} posts on Jenish Jain's engineering blog" />
+<meta property="og:site_name" content="Jenish Jain's Engineering Blog" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@jenishjain6" />
+<meta name="twitter:title" content="{{ categoryName | capitalize }} Posts" />
+<meta name="twitter:description" content="Browse {{ categoryName }} posts on Jenish Jain's engineering blog" />
+{% endblock %}
+
+{% block main %}
+<main>
+  <nav aria-label="Breadcrumb" class="breadcrumb" style="
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  ">
+    <ol style="
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    ">
+      <li style="margin: 0;">
+        <a href="/" style="color: var(--color-link); text-decoration: none;">Home</a>
+      </li>
+      <li aria-hidden="true" style="margin: 0;">&rsaquo;</li>
+      <li style="margin: 0;">
+        <a href="/categories/" style="color: var(--color-link); text-decoration: none;">Categories</a>
+      </li>
+      <li aria-hidden="true" style="margin: 0;">&rsaquo;</li>
+      <li aria-current="page" style="margin: 0; color: var(--color-text-emphasized);">{{ categoryName | capitalize }}</li>
+    </ol>
+  </nav>
+
+  {% set categoryPosts = collections.posts | selectattr("data.category", "string") | selectattr("data.category", "search", categoryName) %}
+
+  <div class="heading" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="display: inline-block; position: relative;">
+      {{ categoryName | capitalize }}
+      <span style="
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--color-yellow-500);
+      "></span>
+    </h1>
+    <p class="lede">{{ categoryPosts | length }} post{% if categoryPosts | length != 1 %}s{% endif %} in this category</p>
+  </div>
+
+  <div class="post-previews">
+    {% for post in categoryPosts | reverse %}
+    <div class="post-preview" style="--bg-image: url({{ post.data.seo_title | seoImage }})">
+      {% if post.data.thumb %}
+      <img src="{{ post.data.thumb }}" alt="{{ post.data.title }}" class="post-preview" loading="lazy" width="250" height="125" />
+      {% endif %}
+      <h2><a href="/{{ post.data.slug }}/">{{ post.data.title }}</a></h2>
+      <p class="description">{{ post.data.description }}</p>
+      <time style="
+        display: block;
+        font-size: 0.625rem;
+        color: var(--color-text-muted);
+        margin-top: 0.5rem;
+      ">{{ post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}</time>
+      <span aria-hidden="true">read this post &rarr;</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="/categories/" style="
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-background);
+      border: 2px solid var(--color-primary);
+      border-radius: 0.25rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    " onmouseover="this.style.background='var(--color-primary)'; this.style.color='var(--color-background)';" onmouseout="this.style.background='var(--color-background)'; this.style.color='var(--color-primary)';">
+      ← View All Categories
+    </a>
+  </div>
+</main>
+{% endblock %}

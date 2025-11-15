@@ -198,6 +198,14 @@ module.exports = function (eleventyConfig) {
       .map(item => item.post);
   });
 
+  // Filter to calculate reading time
+  eleventyConfig.addFilter('readingTime', function(content) {
+    const wordsPerMinute = 200;
+    const wordCount = content.split(/\s+/).length;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    return `${minutes} min read`;
+  });
+
   return {
     dir: {
       input: 'site',
