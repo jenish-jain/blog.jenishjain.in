@@ -168,7 +168,35 @@ module.exports = function (eleventyConfig) {
 </figure>
 `;
     },
-  ); 
+  );
+
+  // Filter to get related posts based on shared tags
+  eleventyConfig.addFilter('relatedPosts', function(collection, currentSlug, currentTags, limit = 3) {
+    if (!currentTags || currentTags.length === 0) {
+      return [];
+    }
+
+    // Get all posts except the current one
+    const otherPosts = collection.filter(post => post.data.slug !== currentSlug);
+
+    // Calculate similarity score based on shared tags
+    const postsWithScores = otherPosts.map(post => {
+      const postTags = post.data.tags || [];
+      const sharedTags = currentTags.filter(tag => postTags.includes(tag));
+      return {
+        post: post,
+        score: sharedTags.length,
+        sharedTags: sharedTags
+      };
+    });
+
+    // Sort by score (highest first) and return top N
+    return postsWithScores
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+      .map(item => item.post);
+  });
 
   return {
     dir: {

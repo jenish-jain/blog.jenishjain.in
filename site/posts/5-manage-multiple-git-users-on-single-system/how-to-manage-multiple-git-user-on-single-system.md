@@ -1,11 +1,11 @@
 ---
 date: 2022-09-02
 title: How to manage multiple git users on a single system
-seo_title: How to manage multiple git users on a single system
+seo_title: Manage Multiple Git Users on One System | Developer Productivity Guide
 slug: manage-multiple-git-user-on-1-system
-description: An easy way to contribute with multiple github profiles using a single system
+description: Boost your developer productivity by managing multiple GitHub profiles seamlessly. Learn how to configure Git for work and personal accounts on a single system using gitconfig. Essential engineering tool for developers.
 category: productivity
-tags: [git, productivity, blog, website]
+tags: [git, productivity, developer-tools, github, engineering, software-engineering, version-control]
 cta: productivity
 site: blogsite
 thumb: https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/52a130141409355.62566a5b6114b.jpg
