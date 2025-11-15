@@ -1,14 +1,14 @@
 ---
 
 date: 2023-12-03
-title: > 
+title: >
     Export google cloud resources to terraform format
-seo_title: export google cloud resources to terraform format
+seo_title: Export GCP to Terraform - Infrastructure as Code Guide | Cloud Engineering & DevOps
 slug: google-cloud-resource-to-terraform
 description: >
-    How to export your google cloud resources created using click OPs to terraform code for IAC
+    Complete guide to exporting Google Cloud resources to Terraform format. Learn Infrastructure as Code (IaC) best practices, migrate from ClickOps to Terraform, and master cloud engineering with this step-by-step DevOps tutorial.
 category: productivity
-tags: [google-cloud, iac, terraform]
+tags: [google-cloud, iac, terraform, infrastructure-as-code, cloud-engineering, devops, gcp, engineering, software-engineering]
 cta: gcp-to-terraform
 site: blogsite
 thumb: 'https://res.cloudinary.com/jenishjain/image/upload/v1701601252/portfolio/blog-assets/iac.jpg'

@@ -4,7 +4,9 @@
 <title>{% if seo_title %}{{ seo_title }}{% else %}{{ title }}{% endif %}</title>
 
 <link rel="canonical" href="{{ siteUrl }}/{{ slug }}/" />
+<meta name="author" content="Jenish Jain" />
 <meta name="description" content="{{ description }}" />
+<meta name="keywords" content="{{ tags | join(', ') }}, engineering, tech blog, Jenish Jain{% if category == 'work-culture' %}, engineering at Rapido, Rapido{% endif %}" />
 {% if image %}
 <meta name="image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
 {% else %}
@@ -40,42 +42,149 @@
 {% endif %}
 {% endblock %}
 
-
-{% block details %}
-<div class="details">
-  <figure class="author">
-    <img
-      src="https://res.cloudinary.com/jenishjain/image/upload/q_auto,f_auto,c_thumb,w_260,h_260,g_faces,z_0.55/v1700920184/portfolio/images/jenishjain-with-chopsticks.jpg"
-      alt="Jenish Jain" />
-    <figcaption>written by Jenish</figcaption>
-  </figure>
-</div>
-{% endblock %}
-
-{% block sidebar %}
-<div class="sidebar">
-  <div class="sticky-sidebar">
-    <div class="newsletter-nudge">
-      <p>
-        Hey, friends! I share posts like these regularly in my
-        newsletter.
-        <strong
-          >Sign up to get my best stuff direct to your inbox.</strong
-        >
-      </p>
-      <a href="/newsletter/" class="button">I love stuff!</a>
+{% block main %}
+<main>
+  <article class="post">
+    {% block heading %}
+    <div class="heading">
+      <h1>{{title}}</h1>
+      <p class="lede">{{description}}</p>
     </div>
+    {% endblock %}
 
-    <details class="table-of-contents" open>
-      <summary>Table of Contents</summary>
+    {% block details %}
+    <div class="details">
+      <figure class="author">
+        <img
+          src="https://res.cloudinary.com/jenishjain/image/upload/q_auto,f_auto,c_thumb,w_260,h_260,g_faces,z_0.55/v1700920184/portfolio/images/jenishjain-with-chopsticks.jpg"
+          alt="Jenish Jain" />
+        <figcaption>written by Jenish</figcaption>
+      </figure>
+    </div>
+    {% endblock %}
 
-      {{ content | toc | safe }}
-    </details>
-  </div>
-</div>
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-  data-id="jenishjain" data-description="Support me on Buy me a pizza!" data-message="Buy me a pizza!"
-  data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    {% block sidebar %}
+    <div class="sidebar">
+      <div class="sticky-sidebar">
+        <div class="newsletter-nudge">
+          <p>
+            Hey, friends! I share posts like these regularly in my
+            newsletter.
+            <strong
+              >Sign up to get my best stuff direct to your inbox.</strong
+            >
+          </p>
+          <a href="/newsletter/" class="button">I love stuff!</a>
+        </div>
+
+        <details class="table-of-contents" open>
+          <summary>Table of Contents</summary>
+
+          {{ content | toc | safe }}
+        </details>
+      </div>
+    </div>
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="jenishjain" data-description="Support me on Buy me a pizza!" data-message="Buy me a pizza!"
+      data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+    {% endblock %}
+
+    {% block content %}
+    <div class="content">
+      {{ content | safe }}
+    </div>
+    {% endblock %}
+  </article>
+
+  {# Related Posts Section - Below entire article #}
+  {% set relatedPostsList = collections.posts | relatedPosts(slug, tags, 3) %}
+  {% if relatedPostsList.length > 0 %}
+  <aside class="related-posts" style="
+    margin: 3rem auto 2rem;
+    padding: 2.5rem 0 0;
+    border-top: 3px solid var(--color-yellow-500);
+    max-width: 100%;
+  ">
+    <h2 style="
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--color-text-heading);
+    ">Continue Reading</h2>
+
+    <div style="
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+      justify-content: center;
+    ">
+      {% for post in relatedPostsList %}
+      <article class="related-post-card" style="
+        background: var(--color-background);
+        border: 1px solid var(--color-border);
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+      " onmouseover="this.style.borderColor='var(--color-yellow-500)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='var(--color-border)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+
+        {% if post.data.thumb %}
+        <img src="{{ post.data.thumb }}" alt="{{ post.data.title }}" loading="lazy" style="
+          width: 100%;
+          height: 140px;
+          object-fit: cover;
+          display: block;
+          margin: 0;
+        " />
+        {% endif %}
+
+        <div style="padding: 1.25rem; display: flex; flex-direction: column; flex: 1;">
+          <h3 style="
+            font-size: 0.875rem;
+            margin: 0 0 0.625rem 0;
+            line-height: 1.3;
+            font-weight: 600;
+            color: var(--color-text-heading);
+            padding: 0;
+          ">
+            <a href="/{{ post.data.slug }}/" style="
+              text-decoration: none;
+              color: inherit;
+            " onmouseover="this.style.color='var(--color-link)';" onmouseout="this.style.color='var(--color-text-heading)';">
+              {{ post.data.title }}
+            </a>
+          </h3>
+
+          <p style="
+            margin: 0 0 auto;
+            color: var(--color-text-default);
+            font-size: 0.75rem;
+            line-height: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          ">
+            {{ post.data.description }}
+          </p>
+
+          <span aria-hidden="true" style="
+            display: block;
+            color: var(--color-primary);
+            font-size: 0.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 0.75rem;
+          ">read this post &rarr;</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </aside>
+  {% endif %}
+</main>
 {% endblock %}
 
 {% block scripts %}

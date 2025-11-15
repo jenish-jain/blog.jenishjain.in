@@ -43,6 +43,7 @@
     <title>{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}</title>
 
     <link rel="canonical" href="{{ siteUrl }}/" />
+    <meta name="author" content="Jenish Jain" />
     <meta name="description" content="{{description}}" />
     {% if image %}
     <meta name="image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />

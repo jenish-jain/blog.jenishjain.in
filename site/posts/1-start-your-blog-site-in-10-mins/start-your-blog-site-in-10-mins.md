@@ -2,12 +2,12 @@
 date: 2022-01-25
 title: >
   Start your blog site in 10 mins
-seo_title: How to start your personal blog site in 10 minutes.
+seo_title: How to Start a Tech Blog in 10 Minutes | Engineering Blog Setup Guide
 slug: start-your-blog-in-10-mins
 description: >
-  Start your ready to deploy blog site in 10 mins, built with MDX and preact. Create your blog by just writing a .md file.
+  Quick guide to launching your own engineering blog in 10 minutes. Built with MDX and Preact, perfect for developers who want to share technical content. Start your tech blog by just writing markdown files.
 category: self-growth
-tags: [self-growth, productivity, blog, website]
+tags: [self-growth, productivity, blog, website, engineering, tech-blog, web-development, markdown]
 cta: work-happy
 site: blogsite
 thumb: 'https://cdn.dribbble.com/userupload/10905160/file/original-6c2179d180b7931102af662df509ada7.jpg?resize=2400x1800'
