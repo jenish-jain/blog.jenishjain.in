@@ -13,12 +13,20 @@
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ siteUrl }}/{{ slug }}/" />
+<meta property="og:site_name" content="Jenish Jain's Engineering Blog" />
 <meta property="og:description" content="{{ description }}" />
 {% if image %}
 <meta property="og:image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
 {% else %}
 <meta property="og:image" content="{{ title | seoImage }}" />
 {% endif %}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="article:published_time" content="{{ date | rssDate }}" />
+<meta property="article:author" content="Jenish Jain" />
+<meta property="article:section" content="{{ category }}" />
+{% for tag in tags %}<meta property="article:tag" content="{{ tag }}" />
+{% endfor %}
 
 <meta name="twitter:dnt" content="on" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -71,5 +79,78 @@
 {% endblock %}
 
 {% block scripts %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "author": {
+    "@type": "Person",
+    "name": "Jenish Jain",
+    "url": "https://jenishjain.in",
+    "sameAs": [
+      "https://twitter.com/jenishjain6",
+      "https://github.com/jenish-jain",
+      "https://www.linkedin.com/in/jenish-jain"
+    ]
+  },
+  "datePublished": "{{ date | rssDate }}",
+  "dateModified": "{{ date | rssDate }}",
+  {% if image %}
+  "image": "{{ image | cloudinary(page.inputPath, 1200) }}",
+  {% else %}
+  "image": "{{ title | seoImage }}",
+  {% endif %}
+  "publisher": {
+    "@type": "Person",
+    "name": "Jenish Jain",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://res.cloudinary.com/jenishjain/image/upload/q_auto,f_auto,c_thumb,w_260,h_260,g_faces,z_0.55/v1700920184/portfolio/images/jenishjain-with-chopsticks.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ siteUrl }}/{{ slug }}/"
+  },
+  "keywords": "{{ tags | join(', ') }}, engineering, tech blog, Jenish Jain",
+  "articleSection": "{{ category }}"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jenishjain.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ siteUrl }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Posts",
+      "item": "{{ siteUrl }}/posts/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ title }}",
+      "item": "{{ siteUrl }}/{{ slug }}/"
+    }
+  ]
+}
+</script>
+
 <script src="/scripts/post.min.js"></script>
 {% endblock %}
