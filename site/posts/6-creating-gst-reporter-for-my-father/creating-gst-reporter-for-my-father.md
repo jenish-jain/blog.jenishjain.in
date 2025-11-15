@@ -3,7 +3,7 @@ date: 2023-12-03
 title: >
     Automating GST reporting for my father using Cloud Run
 seo_title: Building Automation Tools - GST Reporting with Cloud Run & Golang | Engineering Solutions
-slug: crating-gst-reporter-for-my-father
+slug: creating-gst-reporter-for-my-father
 description: >
     Real-world engineering solution: How I built an automated tax reporting tool using Cloud Run and Golang to solve a real problem. Learn about building automation tools, serverless architecture, and practical software engineering.
 category: automation, taxes
